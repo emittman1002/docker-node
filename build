@@ -1,0 +1,11 @@
+clear
+
+image_tag=emittman:webhello
+old=`docker image ls "$image_tag" | sed 1d`
+if [ -n "$old" ]
+then
+    echo Removing image "$image_tag"
+    docker image rm "$image_tag"
+fi
+
+docker build -t "$image_tag" .
