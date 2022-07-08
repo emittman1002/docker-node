@@ -8,4 +8,4 @@ then
     docker image rm "$image_tag"
 fi
 
-docker build -t "$image_tag" .
+docker build -t "$image_tag" $1 .
